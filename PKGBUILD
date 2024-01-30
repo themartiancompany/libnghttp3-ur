@@ -1,11 +1,20 @@
+# SPDX-License-Identifier: AGPL-3.0
+#
 # Maintainer: kpcyrd <kpcyrd[at]archlinux[dot]org>
+# Maintainer: Truocolo <truocolo@aol.com>
+# Maintainer: Pellegrino Prevete (tallero) <pellegrinoprevete@gmail.com>
 
 pkgname=libnghttp3
 pkgver=1.1.0
 pkgrel=1
 pkgdesc="HTTP/3 library written in C"
 url='https://github.com/ngtcp2/nghttp3'
-arch=('x86_64')
+arch=(
+  'x86_64'
+  'arm'
+  'aarch64'
+  'armv7h'
+)
 license=('MIT')
 provides=('libnghttp3.so')
 source=("${pkgname}-${pkgver}.tar.gz::https://github.com/ngtcp2/nghttp3/archive/refs/tags/v${pkgver}.tar.gz")
@@ -34,4 +43,4 @@ package() {
   install -Dm644 ../COPYING -t "${pkgdir}/usr/share/licenses/${pkgname}"
 }
 
-# vim: ts=2 sw=2 et:
+# vim:set sw=2 sts=-1 et:
